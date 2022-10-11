@@ -10,6 +10,7 @@ struct queueEntry
 {
   Point2D position = Point2D(0,0);
   int totalWeight;
+  Point2D previous = Point2D(0,0);
 };
 
 class Agent 
@@ -19,6 +20,7 @@ public:
   virtual Point2D Move(World*)=0;
   vector<queueEntry> searched;
   vector<queueEntry> neighbor;
+  vector<queueEntry> path;
 };
 
 #endif  // AGENT_H
