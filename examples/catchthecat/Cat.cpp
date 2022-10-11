@@ -51,16 +51,6 @@ Point2D Cat::Move(World* world)
         next.totalWeight = current.totalWeight + 1;
         neighbor.push_back(next);
       }
-      if (!world->getContent(World::SE(current.position))) {
-        next.position = World::SE(current.position);
-        next.totalWeight = current.totalWeight + 1;
-        neighbor.push_back(next);
-      }
-      if (!world->getContent(World::SW(current.position))) {
-        next.position = World::SW(current.position);
-        next.totalWeight = current.totalWeight + 1;
-        neighbor.push_back(next);
-      }
       if (!world->getContent(World::E(current.position))) {
         next.position = World::E(current.position);
         next.totalWeight = current.totalWeight + 1;
@@ -68,6 +58,16 @@ Point2D Cat::Move(World* world)
       }
       if (!world->getContent(World::W(current.position))) {
         next.position = World::W(current.position);
+        next.totalWeight = current.totalWeight + 1;
+        neighbor.push_back(next);
+      }
+      if (!world->getContent(World::SE(current.position))) {
+        next.position = World::SE(current.position);
+        next.totalWeight = current.totalWeight + 1;
+        neighbor.push_back(next);
+      }
+      if (!world->getContent(World::SW(current.position))) {
+        next.position = World::SW(current.position);
         next.totalWeight = current.totalWeight + 1;
         neighbor.push_back(next);
       }
